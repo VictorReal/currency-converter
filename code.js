@@ -1,3 +1,16 @@
+/*
+- creating currency list in HTML -v
+- creating connection with html and js values -v
+- fetch with currency API:                  -x
+1 adding link
+https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json/
+another API:
+https://api.apilayer.com/exchangerates_data/convert?to=usd&from=uah&amount=37
+2 adding event listeners 
+
+*/
+
+
 const currencyEl_one = document.getElementById('currency-one');
 const currencyEl_two = document.getElementById('currency-two');
 const amountEl_one = document.getElementById('amount-one');
@@ -5,29 +18,6 @@ const amountEl_two = document.getElementById('amount-two');
 
 const rateEl = document.getElementById('rate');
 const swap = document.getElementById('swap');
-
-
-
-
-
-var myHeaders = new Headers();
-myHeaders.append("apikey", "xPQxycteiclKxyIaNHGowCqU5EYAJjqa");
-
-var requestOptions = {
-  method: 'GET',
-  redirect: 'follow',
-  headers: myHeaders
-};
-console.log(myHeaders)
-
-fetch("https://api.apilayer.com/exchangerates_data/convert?to=usd&from=uah&amount=37", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
-  
-/*
-
-
 
 
 
@@ -43,48 +33,32 @@ function calculate(){
         })
 }
 
-currencyEl_one.addEventListener('change', calculate);
+/*currencyEl_one.addEventListener('change', calculate); ?????sees mistake*/
 currencyEl_two.addEventListener('change', calculate);
 amountEl_one.addEventListener('input', calculate);
 amountEl_two.addEventListener('input', calculate);
 
-
 calculate();
-
-
-
+const app = document.getElementById('app')
 
 
 
 /*
-const url='https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json' // 1
-let characters = [] // 2
-console.log(url)
-fetch(url, { // 3
+another way
+
+
+var myHeaders = new Headers();
+myHeaders.append("apikey", "xPQxycteiclKxyIaNHGowCqU5EYAJjqa");
+
+var requestOptions = {
   method: 'GET',
-}).then(function(response){
-    return response.json() // 6
-}).then(function(data){
-    characters = data // 7
-    renderCharacters(app, characters) // 8
-    console.log(data)
-})
-
-// 4 function initialization
-function renderCharacters(app, characters){ 
-    for(const character of characters){ // 9
-        console.log(`${character.cc} ${character.txt}`)
-    
-        const characterContainer = document.createElement('div') // 9.1
-        characterContainer.classList.add('container')
-        characterContainer.innerHTML = `
-        <select>
-            <option> ${character.txt.map}  </option>
-        </select>
-        ${character.txt} 
-        `
-        app.appendChild(characterContainer) // 9.8
-    }   
-}
-
-const app = document.getElementById('app') // 5
+  redirect: 'follow',
+  headers: myHeaders
+};
+console.log(myHeaders)
+fetch("https://api.apilayer.com/exchangerates_data/convert?to=usd&from=uah&amount=37", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+  
+*/
