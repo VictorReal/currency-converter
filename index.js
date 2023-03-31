@@ -17,5 +17,4 @@ startAnimationBtn.addEventListener('click', function() {
   cvElement.style.backgroundColor = "#023020";
   wgElement.style.backgroundColor = "#023020";
   startAnimationBtn.style.backgroundColor = "#023020";
-
 });

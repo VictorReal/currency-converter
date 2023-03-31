@@ -67,9 +67,7 @@ main {
   border-radius: 10px;
   padding: 20px 10px 40px ;
   height: 20vh;
-  width: 34vw;
-   
-   
+  width: 400px; 
 }
 #part1, #part2 {
   padding: 0px;
@@ -81,4 +79,16 @@ select{
 }
 #amountInput {
   width: 110px;
+}
+
+@media (max-width: 800px) {
+
+  @keyframes moveBackground {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 0 150%;
+    }
+  }
 }
