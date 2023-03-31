@@ -1,154 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exchange Rate Calculator</title>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange Rate Calculator</title> 
+    <link rel="stylesheet" type="text/css" href="./styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <link rel="icon" type="image/png" href="./media/Dollar_Sign.svg">
   </head>
   <body>
-    <main>
-      <p>гроші</p>
+    <nav>
+      <button>My Repositories</button>
+      <button>My CV</button>
       <div class="content">
-        <div class="currency">
-          <select id="currency-two">
-            <option value="AUD">Австралійський долар</option>
-            <option value="CAD">Канадський долар</option>
-            <option value="CNY">Юань Женьміньбі</option>
-            <option value="CZK">Чеська крона</option>
-            <option value="DKK">Данська крона</option>
-            <option value="HKD">Гонконгівський долар</option>
-            <option value="HUF">Форинт</option>
-            <option value="INR">Індійська рупія</option>
-            <option value="IDR">Рупія</option>
-            <option value="ILS">Новий ізраїльський шекель</option>
-            <option value="JPY">Єна</option>
-            <option value="KZT">Теньге</option>
-            <option value="KRW">Вона</option>
-            <option value="MXN">Мексиканське песо</option>
-            <option value="MDL">Молдовський лей</option>
-            <option value="NZD">Новозеландський долар</option>
-            <option value="NOK">Норвезька крона</option>
-            <option value="SGD">Сінгапурський долар</option>
-            <option value="ZAR">Ренд</option>
-            <option value="SEK">Шведська крона</option>
-            <option value="CHF">Швейцарський франк</option>
-            <option value="EGP">Єгипетський фунт</option>
-            <option value="GBP">Фунт стерлінгів</option>
-            <option value="USD">Долар США</option>
-            <option value="UAH" selected>Українська гривня</option>
-            <option value="AZN">Азербайджанський манат</option>
-            <option value="RON">Румунський лей</option>
-            <option value="TRY">Турецька ліра</option>
-            <option value="XDR">СПЗ (спеціальні права запозичення)</option>
-            <option value="BGN">Болгарський лев</option>
-            <option value="EUR">Євро</option>
-            <option value="PLN">Злотий</option>
-            <option value="DZD">Алжирський динар</option>
-            <option value="BDT">Така</option>
-            <option value="AMD">Вірменський драм</option>
-            <option value="DOP">Домініканське песо</option>
-            <option value="IQD">Іракський динар</option>
-            <option value="KGS">Сом</option>
-            <option value="LBP">Ліванський фунт</option>
-            <option value="LYD">Лівійський динар</option>
-            <option value="MYR">Малайзійський ринггіт</option>
-            <option value="MAD">Марокканський дирхам</option>
-            <option value="PKR">Пакистанська рупія</option>
-            <option value="SAR">Саудівський ріял</option>
-            <option value="VND">Донг</option>
-            <option value="THB">Бат</option>
-            <option value="AED">Дирхам ОАЕ</option>
-            <option value="TND">Туніський динар</option>
-            <option value="UZS">Узбецький сум</option>
-            <option value="TWD">Новий тайванський долар</option>
-            <option value="TMT">Туркменський новий манат</option>
-            <option value="RSD">Сербський динар</option>
-            <option value="TJS">Сомоні</option>
-            <option value="GEL">Ларі</option>
-            <option value="BRL">Бразильський реал</option>
-            <option value="XAU">Золото</option>
-            <option value="XAG">Срібло</option>
-            <option value="XPT">Платина</option>
-            <option value="XPD">Паладій</option>
-          </select>
-          <input type="number" id="amount-one" placeholder="0" value="1">
-        </div>
-
-        <div class="swap-rate-container">
-          <button class="btn" id="swap">Swap</button>
-          <div class="rate" id="rate"></div>
-          </div>
-
-          <div class="currency">
-            <select id="currency-two">
-              <option value="AUD">Австралійський долар</option>
-              <option value="CAD">Канадський долар</option>
-              <option value="CNY">Юань Женьміньбі</option>
-              <option value="CZK">Чеська крона</option>
-              <option value="DKK">Данська крона</option>
-              <option value="HKD">Гонконгівський долар</option>
-              <option value="HUF">Форинт</option>
-              <option value="INR">Індійська рупія</option>
-              <option value="IDR">Рупія</option>
-              <option value="ILS">Новий ізраїльський шекель</option>
-              <option value="JPY">Єна</option>
-              <option value="KZT">Теньге</option>
-              <option value="KRW">Вона</option>
-              <option value="MXN">Мексиканське песо</option>
-              <option value="MDL">Молдовський лей</option>
-              <option value="NZD">Новозеландський долар</option>
-              <option value="NOK">Норвезька крона</option>
-              <option value="SGD">Сінгапурський долар</option>
-              <option value="ZAR">Ренд</option>
-              <option value="SEK">Шведська крона</option>
-              <option value="CHF">Швейцарський франк</option>
-              <option value="EGP">Єгипетський фунт</option>
-              <option value="GBP">Фунт стерлінгів</option>
-              <option value="USD" selected>Долар США</option>
-              <option value="UAH">Українська гривня</option>
-              <option value="AZN">Азербайджанський манат</option>
-              <option value="RON">Румунський лей</option>
-              <option value="TRY">Турецька ліра</option>
-              <option value="XDR">СПЗ (спеціальні права запозичення)</option>
-              <option value="BGN">Болгарський лев</option>
-              <option value="EUR">Євро</option>
-              <option value="PLN">Злотий</option>
-              <option value="DZD">Алжирський динар</option>
-              <option value="BDT">Така</option>
-              <option value="AMD">Вірменський драм</option>
-              <option value="DOP">Домініканське песо</option>
-              <option value="IQD">Іракський динар</option>
-              <option value="KGS">Сом</option>
-              <option value="LBP">Ліванський фунт</option>
-              <option value="LYD">Лівійський динар</option>
-              <option value="MYR">Малайзійський ринггіт</option>
-              <option value="MAD">Марокканський дирхам</option>
-              <option value="PKR">Пакистанська рупія</option>
-              <option value="SAR">Саудівський ріял</option>
-              <option value="VND">Донг</option>
-              <option value="THB">Бат</option>
-              <option value="AED">Дирхам ОАЕ</option>
-              <option value="TND">Туніський динар</option>
-              <option value="UZS">Узбецький сум</option>
-              <option value="TWD">Новий тайванський долар</option>
-              <option value="TMT">Туркменський новий манат</option>
-              <option value="RSD">Сербський динар</option>
-              <option value="TJS">Сомоні</option>
-              <option value="GEL">Ларі</option>
-              <option value="BRL">Бразильський реал</option>
-              <option value="XAU">Золото</option>
-              <option value="XAG">Срібло</option>
-              <option value="XPT">Платина</option>
-              <option value="XPD">Паладій</option>
-            </select>
-            <input type="number" id="amount-two">
-          </div>
-
-        </div>   
-        <div id="app"></div>
+        <audio id="myAudio" src="./media/Money In The Bank - Theme Song.mp3"></audio>
+        <button id="start-animation-btn">Add fun</button>
+        <div class="background hidden"></div>
       </div>
+    </nav>
+    <main>  
+      <!--part that works with fetch-->
+      <div id="part1">
+        <h2>From:</h2>
+        <select id="currencyList"></select>
+        <input type="number" id="amountInput" placeholder="Enter amount" min="1">
+        <h2>To:</h2>
+        <select id="targetCurrencyList"></select>
+        <button id="calculateButton">Calculate</button>
+      </div>
+      <div id="part2"></div>        
     </main>
-    <script type="module" src="code.js"></script> 
   </body>
+  <script src="code.js"></script>
+  <script src="index.js"></script>
 </html>
