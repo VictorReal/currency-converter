@@ -8,7 +8,7 @@ body {
    display: flex; 
    flex-direction: column;
    align-items: center;
-   gap: 30vh;
+   gap: 25vh;
    background-color:whitesmoke; 
    color: whitesmoke;   
  }
