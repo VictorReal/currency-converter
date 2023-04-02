@@ -17,4 +17,14 @@ startAnimationBtn.addEventListener('click', function() {
   cvElement.style.backgroundColor = "#023020";
   wgElement.style.backgroundColor = "#023020";
   startAnimationBtn.style.backgroundColor = "#023020";
+
+  const numCoins = 10;
+  const container = document.querySelector('.content');
+  for (let i = 0; i < numCoins; i++) {
+    const coin = document.createElement('div');
+    coin.classList.add('coin');
+    container.appendChild(coin);
+  }
 });
+
+
