@@ -6,7 +6,7 @@ const navElement = document.querySelector("nav");
 const mainElement = document.querySelector("main");
 const gitElement = document.querySelector("#git_btn");
 const cvElement = document.querySelector("#cv_btn");
-const wgElement = document.querySelector("#wg_btn");
+const wgElement = document.querySelector("#prj_btn");
 
 startAnimationBtn.addEventListener('click', function() {
   background.classList.remove('hidden')
